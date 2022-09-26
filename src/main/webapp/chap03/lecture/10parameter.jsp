@@ -22,4 +22,4 @@
 	<p>accept : <%= request.getHeader("Accept") %></p>
 	<p>accept encoding : <%= request.getHeader("Accept-Encoding") %></p>	
 </body>
-</html>
+</html> 
