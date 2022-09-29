@@ -3,5 +3,6 @@
 
     <div>
     	<p>address : <%= request.getParameter("address") %></p>
+    	<p>name : <%= request.getParameter("name") %></p>
     
     </div>

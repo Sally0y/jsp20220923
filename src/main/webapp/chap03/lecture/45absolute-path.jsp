@@ -8,7 +8,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-		<h1>45에서 46으로 요청 파라미터 보내기</h1>
+	<h1>45에서 46으로 요청 파라미터 보내기</h1>
+	<%--
+	action 속성에 46번 파일경로를 절대경로로 (/로 시작) 작성
+	 --%>
 	<form action="<%= request.getContextPath() %>/chap03/lecture/46path.jsp">
 	<form action="">
 		<input type="text" name="name"> 
