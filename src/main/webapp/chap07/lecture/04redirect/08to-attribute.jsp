@@ -8,22 +8,16 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-	<h1>01from.jsp</h1>
+	<h1>08 to.jsp</h1>
+	<%
+	String str1 = (String) request.getAttribute("name1"); // 못꺼낸다.
+	String str2 = (String) session.getAttribute("name2"); // 꺼낼 수 있다.
 	
-	<%-- 
-	forward : 다른 servlet(jsp)로 요청흐름 변경 
-	그래서, 다른 servlet(jsp)가 최종응답하게 됨
-	--%>
-	
-	<jsp:forward page="01to.jsp"></jsp:forward>
-
+	%>
+	<h1>name1 : <%= str1 %></h1>
+	<h1>name2 : <%= str2 %></h1>
 </body>
 </html>
-
-
-
-
 
 
 

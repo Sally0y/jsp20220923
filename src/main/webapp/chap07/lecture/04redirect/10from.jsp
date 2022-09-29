@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
-<% request.setCharacterEncoding("utf-8"); %>    
-
+<% request.setCharacterEncoding("utf-8"); %>
 <%
-List<String> list = List.of("iron", "cap", "thor", "hulk");
-session.setAttribute("names", list);
+// session attribute 추가하기
+List<String> l = List.of("goose", "rooster");
+session.setAttribute("names", l);
 
 response.sendRedirect("10to.jsp");
 %>

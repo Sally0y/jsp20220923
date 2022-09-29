@@ -1,13 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<% request.setCharacterEncoding("utf-8"); %>    
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
+<%@ page import="java.util.*" %>
+<% request.setCharacterEncoding("utf-8"); %>
 
-</body>
-</html>
+<%
+	Map<String, String> map = new HashMap<>();
+	map.put("donald", "chicago");
+	map.put("trump", "new york");
+	request.setAttribute("address", map);
+%>
+<jsp:forward page="09to.jsp"  />

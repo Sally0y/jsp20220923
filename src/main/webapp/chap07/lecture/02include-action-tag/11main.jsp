@@ -24,6 +24,7 @@
 	
 	<div>
 		<h3>el만 사용</h3>
+		<jsp:include page="11sub-el.jsp"></jsp:include>
 	</div>
 </body>
 </html>

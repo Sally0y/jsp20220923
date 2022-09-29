@@ -10,19 +10,25 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%-- 
-11from.jsp -forward--> 11to.jsp
-오류없이 값들이 출력되도록 11from.jsp 완성 --%>
-	<%
-	List<Person> people = (List<Person>) request.getAttribute("list");
-	%>
-	
-	<p>1번 : <%= people.get(0).getName() %></p>
-	<p>2번 : <%= people.get(1).getName() %></p>
-	<p>3번 : <%= people.get(2).getName() %></p>
-
+<%
+List<Book> list = List.of(new Book("spring", 100), new Book("sql", 500));
+request.setAttribute("books", list);
+%>
+<h1>12 main</h1>
+<jsp:include page="12sub.jsp"></jsp:include>
+<hr>
+<jsp:include page="12sub-el.jsp"></jsp:include>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
 
 
 

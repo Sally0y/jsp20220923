@@ -2,9 +2,8 @@
     pageEncoding="UTF-8"%>
 <% request.setCharacterEncoding("utf-8"); %>
 
-
 <%
-request.setAttribute("num1", 30);
-request.setAttribute("num2", 50);
+request.setAttribute("song", "dynamite");
 %>
-<jsp:forward page="07to.jsp" />
+
+<jsp:forward page="06to-attribute.jsp" />

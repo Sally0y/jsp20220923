@@ -8,24 +8,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-	<h1>01from.jsp</h1>
-	
-	<%-- 
-	forward : 다른 servlet(jsp)로 요청흐름 변경 
-	그래서, 다른 servlet(jsp)가 최종응답하게 됨
-	--%>
-	
-	<jsp:forward page="01to.jsp"></jsp:forward>
-
+	<h1>02redirect.jsp</h1>
+	<%
+	// 302 응답 : 다른 곳으로 다시 요청 보내라
+	response.sendRedirect("https://www.daum.net");
+	%>
 </body>
 </html>
-
-
-
-
-
-
 
 
 

@@ -2,9 +2,7 @@
     pageEncoding="UTF-8"%>
 <% request.setCharacterEncoding("utf-8"); %>
 
-
 <%
-request.setAttribute("num1", 30);
-request.setAttribute("num2", 50);
+// 03to.jsp로 다시 요청 보내라
+response.sendRedirect("03to.jsp");
 %>
-<jsp:forward page="07to.jsp" />
