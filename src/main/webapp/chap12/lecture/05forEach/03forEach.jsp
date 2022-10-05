@@ -11,9 +11,16 @@
 <body>
 	<%-- 구구단 출력 --%>
 	<%-- request parameter "dan" --%>
-	<h3>구구단 ${param.dan }단 출력</h3>
+	<c:if test="${empty param.dan }" var="emptyDan">
+		<h3>몇 단을 출력할 지 입력해주세요.</h3>
+	</c:if>
 	
-	<c:forEach begin="1" end="9" var="dan">
-	<p>${idx }</p>
+	<c:if test="${not emptyDan }">
+		<h3>구구단 ${param.dan }단 출력</h3>
+		<c:forEach begin="1" end="9" var="num">
+			<p>${param.dan } X ${num } = ${param.dan * num }</p>
+		</c:forEach>
+	</c:if>
+	
 </body>
 </html>

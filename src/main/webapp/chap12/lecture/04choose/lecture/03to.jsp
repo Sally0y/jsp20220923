@@ -14,10 +14,10 @@
 		<c:when test="${param.genre == 'comedy' }">
 			<h4>앤트맨</h4>
 		</c:when>
-		<c:when test="${param.genre == "family"}">
+		<c:when test="${param.genre == 'family'}">
 			<h4>코코</h4>
 		</c:when>
-		<c:when test="${param.genre == "action" }">
+		<c:when test="${param.genre == 'action'}">
 			<h4>헝거게임</h4>
 		</c:when>
 		<c:otherwise>

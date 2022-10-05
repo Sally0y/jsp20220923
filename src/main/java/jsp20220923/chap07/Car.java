@@ -8,6 +8,12 @@ public class Car {
 		
 	}
 	
+	public Car(String model, Integer price) {
+		super();
+		this.model = model;
+		this.price = price;
+	}
+	
 	// 읽을 수 있는 model 프로퍼티 결정
 	public String getModel() {
 		return model;
