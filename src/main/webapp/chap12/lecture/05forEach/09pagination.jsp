@@ -26,7 +26,7 @@
 	  <ul class="pagination">
 	    <li class="page-item"><a class="page-link" href="#">Previous</a></li>	
 	
-		<c:forEach begin="1" end="3" var="i">
+		<c:forEach begin="1" end="5" var="i">
 			<li class="page-item">
 				<a href="#" class="page-link">${i }</a>
 			</li>
