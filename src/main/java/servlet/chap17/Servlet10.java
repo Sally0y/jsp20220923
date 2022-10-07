@@ -8,16 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class Servlet03
+ * Servlet implementation class Servlet10
  */
-@WebServlet("/Servlet03")
-public class Servlet03 extends HttpServlet {
+@WebServlet("/Servlet10")
+public class Servlet10 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Servlet03() {
+    public Servlet10() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -26,22 +26,24 @@ public class Servlet03 extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("세번째 서블릿 일함########");
-		
-		// 일한 결과를 객체에 담아서
-		request.setAttribute("result", "일한 결과!!!!!!");
-		
-		// jsp로 forward
-		String jspPath = "/WEB-INF/view/chap17/view02.jsp";
-		request.getRequestDispatcher(jspPath).forward(request, response);
+		// view06.jsp 로 포워드
+		String path = "/WEB-INF/view/chap17/view06.jsp";
+		request.getRequestDispatcher(path).forward(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		// jsp 의 form에서 전송 버튼을 클릭하면
+		// post 방식 요청이 와서
+		// 이 메소드가 실행될 수 있도록 코드 작성
+		
+		String id = request.getParameter("id");
+		String pw = request.getParameter("1234");
+		
+		System.out.println("Id: " + id);
+		System.out.println("pw: " + pw);
 	}
 
 }
