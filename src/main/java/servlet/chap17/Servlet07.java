@@ -27,7 +27,7 @@ public class Servlet07 extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("일곱번째 서블릿 일함");
-		
+		getInitParameter(getServletName())
 	}
 
 	/**
