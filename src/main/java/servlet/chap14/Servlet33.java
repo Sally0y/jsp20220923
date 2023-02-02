@@ -1,23 +1,28 @@
-package servlet.chap17;
+package servlet.chap14;
 
 import java.io.IOException;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.chap14.ProductDao;
+
 /**
- * Servlet implementation class Servlet07
+ * Servlet implementation class Servelt33
  */
-//@WebServlet("/Servlet07")
-public class Servlet07 extends HttpServlet {
+@WebServlet("/Servlet33")
+public class Servlet33 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
+	private ProductDao productDao = new ProductDao();
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Servlet07() {
+    public Servlet33() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -26,14 +31,24 @@ public class Servlet07 extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("일곱번째 서블릿 일함@@@@@@@@@");
-		String ip = getInitParameter("ip");
-		String password = getInitParameter("pw");
-		String userName = getInitParameter("userName");
+		// 1. request param 수집
+		String idParam = request.getParameter("id");
+		// 2. request param 가공
+		int id = Integer.parseInt(idParam);
 		
-		System.out.println("ip 파라미터 : " + ip);
-		System.out.println("pw 파라미터 : " + password);
-		System.out.println("userName 파라미터 : " + userName);
+		// 3. business logic 실행
+		// connection 얻기
+		// sql 실행
+		// result set 처리
+		String productName = productDao.getProductNameById(id, getServletContext());
+		
+		// 4. add attribute (결과)
+		request.setAttribute("name", productName);
+		
+		// 5. redirect / forward
+		String path = "/WEB-INF/view/chap14/view14.jsp";
+		request.getRequestDispatcher(path).forward(request, response);
+	
 	}
 
 	/**
@@ -45,3 +60,7 @@ public class Servlet07 extends HttpServlet {
 	}
 
 }
+
+
+
+
